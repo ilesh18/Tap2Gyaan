@@ -17,7 +17,6 @@ import ReportsPage from './components/ReportsPage';
 import GamificationPage from './components/GamificationPage';
 import SettingsPage from './components/SettingsPage';
 import Toast from './components/Toast';
-import AIChatbot from './components/AIChatbot';
 
 function App() {
   const { user } = useApp();
@@ -34,7 +33,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-transparent">
+    <div className="min-h-screen bg-brand-bg">
       <Sidebar />
 
       {/* Main content area — pushed right on desktop for sidebar */}
@@ -60,7 +59,6 @@ function App() {
       </main>
 
       <Toast />
-      <AIChatbot />
     </div>
   );
 }
