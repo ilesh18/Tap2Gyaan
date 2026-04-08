@@ -1,0 +1,24 @@
+{
+  "name": "tap2gyaan-backend",
+  "version": "1.0.0",
+  "description": "Secure backend for Tap2Gyaan study platform",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "nodemailer": "^7.0.3",
+    "xss-filters": "^1.2.7"
+  }
+}

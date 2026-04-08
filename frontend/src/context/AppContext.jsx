@@ -42,14 +42,17 @@ export const AppProvider = ({ children }) => {
     localStorage.setItem('otsAchievements', JSON.stringify(achievements));
   }, [achievements]);
 
-  const login = (username) => {
-    const id = 'user_' + username.toLowerCase().replace(/\s+/g, '_') + '_' + Date.now().toString(36);
-    const u = { id, username, createdAt: Date.now() };
-    setUser(u);
-    return u;
+  const login = (userData) => {
+    // Accepts user object from backend
+    setUser(userData);
+    return userData;
   };
 
-  const logout = () => {
+  const logout = async () => {
+    try {
+      await fetch('http://127.0.0.1:5000/api/auth/logout', { method: 'POST' });
+    } catch(e) { console.error('Logout error', e); }
+    
     setUser(null);
     localStorage.removeItem('otsUser');
   };
